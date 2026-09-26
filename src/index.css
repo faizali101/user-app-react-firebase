@@ -5,6 +5,42 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #111827;
+  color: #f9fafb;
+}
+
+#root {
+  min-height: 100vh;
+  background-color: #111827;
+  color: #f9fafb;
+}
+
+.card,
+.list-group-item,
+.form-control,
+.input-group-text,
+.modal-content,
+.table,
+.btn {
+  background-color: #1f2937 !important;
+  color: #f9fafb !important;
+  border-color: #374151 !important;
+}
+
+.text-primary,
+.text-secondary,
+.text-info,
+.text-dark,
+body,
+label,
+input,
+button,
+.list-group-item,
+.card,
+.card-body,
+.card-header,
+.card-footer {
+  color: #f9fafb !important;
 }
 
 code {

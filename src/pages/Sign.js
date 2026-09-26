@@ -21,7 +21,8 @@ import { toast } from 'react-toastify';
 import {FcGoogle} from 'react-icons/fc';
 import { LuGithub } from "react-icons/lu"; // Lucide
 
-const Sign  = () => {   const context = useContext(UserContext);
+const Sign  = () => {   
+    const context = useContext(UserContext);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [confirm, setConfirm] = useState('');
@@ -37,7 +38,7 @@ const Sign  = () => {   const context = useContext(UserContext);
             .auth()
             .createUserWithEmailAndPassword(email, password)
             .then((res) => {
-                console.Sign(res);
+                console.log(res);
                 context.setUser({
                     email: res.user.email,
                     uid: res.user.uid
@@ -45,7 +46,7 @@ const Sign  = () => {   const context = useContext(UserContext);
             })
             .catch((error) => {
                 console.Sign(error);
-                toast(error.message, {
+                toast.error(error.message, {
                     type: 'error'
                 });
             });
@@ -101,9 +102,7 @@ const Sign  = () => {   const context = useContext(UserContext);
                                       placeholder="Confirm your password"
                                    />
                                </FormGroup>
-                                
-
-                                <Button color="primary" type="submit" block>
+                                <Button color="primary" type="submit">
                                     Sign Up
                                 </Button>
                             </Form>

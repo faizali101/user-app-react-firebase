@@ -6,12 +6,13 @@ const Footer = () => {
         <Container
           fluid 
           tag='footer'
-          className='text-center bg-primary text-white fixed-bottom p-3'
+          className='text-center bg-#111827 text-white fixed-bottom p-3'
         >
-        <FaCopyright className='mr-2 d-inline-block'/>
-        LCO User App with FireBase by Ali 
+         User App with FireBase by Ali 
+         {' '}
+        <FaCopyright className='me-2 d-inline-block'/>
         </Container>
     );
-}
+};
 
 export default Footer;

@@ -30,7 +30,7 @@ const App = () => {
           <Route path='/login' element={<Log />} />
           <Route path='*' element={<PageNotFound />} />
         </Routes>
-        ,<Footer></Footer>
+        <Footer></Footer>
       </UserContext.Provider>
     </Router>
   );

@@ -19,9 +19,10 @@ import firebase from 'firebase/compat/app';
 import UserContext from '../context/UserContext';
 import { toast } from 'react-toastify';
 import {FcGoogle} from 'react-icons/fc';
-import { LuGithub } from "react-icons/lu"; // Lucide
+import { LuGithub } from "react-icons/lu"; 
 
-const Log  = () => {   const context = useContext(UserContext);
+const Log  = () => {   
+    const context = useContext(UserContext);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
@@ -29,7 +30,7 @@ const Log  = () => {   const context = useContext(UserContext);
 
         firebase
             .auth()
-            .createUserWithEmailAndPassword(email, password)
+            .signInWithEmailAndPassword(email, password)
             .then((res) => {
                 console.log(res);
                 context.setUser({
@@ -39,7 +40,7 @@ const Log  = () => {   const context = useContext(UserContext);
             })
             .catch((error) => {
                 console.log(error);
-                toast(error.message, {
+                toast.error(error.message, {
                     type: 'error'
                 });
             });
@@ -85,15 +86,13 @@ const Log  = () => {   const context = useContext(UserContext);
                                         placeholder="Enter your password"
                                     />
                                 </FormGroup>
-                                
-
-                                <Button color="primary" type="submit" block>
+                                <Button color="primary" type="submit" >
                                     Log In
                                 </Button>
                             </Form>
                         </CardBody>
                         <CardFooter className="text-center">
-                         <FcGoogle/>   Log-In with Google
+                         <FcGoogle/>   Log-In with G-Mail
                         </CardFooter>
                         <CardFooter className="text-center">
                          <LuGithub/>   Log-In with GitHub
